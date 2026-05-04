@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="선택을 시작하시겠습니까?"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시작함"/>
+        <Switch
+            android:id="@+id/onOffSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="좋아하는 안드로이드 버전은?"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/versionQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Q(10.0)"/>
+        <RadioButton
+            android:id="@+id/versionR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R(11.0)"/>
+        <RadioButton
+            android:id="@+id/versionS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S(12.0)"/>
+    </RadioGroup>
+    <ImageView
+        android:id="@+id/versionImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:background="#EEEEEE"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/endButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="종료"/>
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="처음으로"/>
+
+
+</LinearLayout>
